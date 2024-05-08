@@ -1,0 +1,113 @@
+[
+    {
+        "category": "Mobile Phones",
+        "brand": "Apple",
+        "models": [
+            {
+                "name": "iPhone 12",
+                "variants": [
+                    {
+                        "storage": "64GB",
+                        "color": "Black"
+                    },
+                    {
+                        "storage": "128GB",
+                        "color": "White"
+                    },
+                    {
+                        "storage": "256GB",
+                        "color": "Blue"
+                    }
+                ]
+            },
+            {
+                "name": "iPhone 11",
+                "variants": [
+                    {
+                        "storage": "64GB",
+                        "color": "Green"
+                    },
+                    {
+                        "storage": "128GB",
+                        "color": "Yellow"
+                    }
+                ]
+            },
+            {
+                "name": "iPhone SE",
+                "variants": [
+                    {
+                        "storage": "64GB",
+                        "color": "Red"
+                    },
+                    {
+                        "storage": "128GB",
+                        "color": "Black"
+                    }
+                ]
+            },
+            {
+                "name": "iPhone XS",
+                "variants": [
+                    {
+                        "storage": "64GB",
+                        "color": "Gold"
+                    },
+                    {
+                        "storage": "256GB",
+                        "color": "Silver"
+                    }
+                ]
+            },
+            {
+                "name": "iPhone XR",
+                "variants": [
+                    {
+                        "storage": "64GB",
+                        "color": "Blue"
+                    },
+                    {
+                        "storage": "128GB",
+                        "color": "Coral"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Laptops",
+        "brand": "Dell",
+        "models": [
+            {
+                "name": "Dell XPS 13",
+                "variants": [
+                    {
+                        "processor": "Intel Core i5",
+                        "ram": "8GB",
+                        "storage": "256GB SSD"
+                    },
+                    {
+                        "processor": "Intel Core i7",
+                        "ram": "16GB",
+                        "storage": "512GB SSD"
+                    }
+                ]
+            },
+            {
+                "name": "Dell Inspiron 15",
+                "variants": [
+                    {
+                        "processor": "AMD Ryzen 5",
+                        "ram": "8GB",
+                        "storage": "512GB SSD"
+                    },
+                    {
+                        "processor": "Intel Core i3",
+                        "ram": "4GB",
+                        "storage": "256GB SSD"
+                    }
+                ]
+            }
+        ]
+    }
+]
