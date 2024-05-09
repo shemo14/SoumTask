@@ -1,3 +1,4 @@
 import Text from './Text';
+import Collapsible from './Collapsible';
 
-export {Text};
+export {Text, Collapsible};

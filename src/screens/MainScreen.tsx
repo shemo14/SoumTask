@@ -1,15 +1,15 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import products from '../data/products.json';
-import {Text} from '../common';
-
+import {ProductItem} from '../components';
 const MainScreen = () => {
-  const renderItem = (item: any) => {
-    return <Text type={'h4'}>{item.category}</Text>;
-  };
-
   return (
-    <FlatList data={products} renderItem={({item}: any) => renderItem(item)} />
+    <View style={{backgroundColor: '#fff', padding: 15}}>
+      <FlatList
+        data={products}
+        renderItem={({item}: any) => <ProductItem product={item} />}
+      />
+    </View>
   );
 };
 
