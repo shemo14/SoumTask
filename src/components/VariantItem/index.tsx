@@ -1,19 +1,24 @@
-import React, {useState} from 'react';
-import {Text, Checkbox} from '../../common';
-import {View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, Collapsible} from '../../common';
+import {checkProduct} from '../../features/products/requests';
+import {useDispatch, useSelector} from 'react-redux';
 const VariantItem = ({variant}: any) => {
+  const selectedProducts = useSelector(state => state.products.selectedProducts);
+  const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
+  const checkHandler = async (isChecked: boolean) => {
+    await dispatch(checkProduct({isChecked, id: variant.id}));
+  };
+  useEffect(() => {
+    setChecked(selectedProducts.indexOf(variant.id) !== -1);
+    console.log('this is a selected products arr ....', selectedProducts);
+  }, [selectedProducts]);
   return (
-    <View style={{flexDirection: 'row', alignItems: 'center', marginStart: 15}}>
-      <Checkbox
-        onChange={() => setChecked(!checked)}
-        checked={checked}
-        style={{marginEnd: 10}}
-      />
-      <Text style={{marginBottom: 10}} type={'h4'}>
-        {variant}
-      </Text>
-    </View>
+    <Collapsible
+      onChecked={checkHandler}
+      isChecked={checked}
+      header={() => <Text type={'h4'}>{variant.storage}</Text>}
+    />
   );
 };
 export default VariantItem;

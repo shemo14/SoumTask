@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import Checkbox from '../Checkbox';
 
-const Collapsible = ({header, body}: any) => {
+const Collapsible = ({header, body, onChecked, isChecked}: any) => {
   const [collapsed, setCollapsed] = useState(true);
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(isChecked);
+  const checkHandler = () => {
+    onChecked(!checked);
+    setChecked(!checked);
+  };
+  useEffect(() => {
+    setChecked(isChecked);
+  }, [isChecked]);
 
   return (
     <View
@@ -22,13 +29,13 @@ const Collapsible = ({header, body}: any) => {
             flexDirection: 'row',
           }}>
           <Checkbox
-            onChange={() => setChecked(!checked)}
+            onChange={() => checkHandler()}
             checked={checked}
             style={{marginEnd: 10}}
           />
           {header()}
         </View>
-        {!collapsed && (
+        {!collapsed && body && (
           <View
             style={{
               height: 'auto',

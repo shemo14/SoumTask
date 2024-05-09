@@ -6,6 +6,10 @@ import BrandItem from '../BrandItem';
 const ProductItem = ({product}: any) => {
   return (
     <Collapsible
+      onChecked={(isChecked: boolean) =>
+        console.log('product is checked ...', isChecked)
+      }
+      // isChecked={true}
       header={() => <Text type={'h4'}>{product.category}</Text>}
       body={() => (
         <FlatList

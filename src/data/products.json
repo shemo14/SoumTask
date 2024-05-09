@@ -1,88 +1,213 @@
 [
     {
+        "id": "category_phones",
         "category": "Phones",
         "brands": [
             {
-                "id": 1,
+                "id": "phone_apple_brand",
                 "name": "Apple",
                 "models": [
                     {
-                        "id": 1,
+                        "id": "phones_apple_models_1",
                         "name": "iPhone SE",
-                        "variants": ["64GB", "128GB"]
+                        "variants": [
+                            {
+                                "id": "iphone_se_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "iphone_se_128GB",
+                                "storage": "128GB"
+                            }
+                        ]
                     },
                     {
-                        "id": 2,
+                        "id": "phones_apple_models_2",
                         "name": "iPhone 11",
-                        "variants": ["64GB", "128GB", "256GB"]
+                        "variants": [
+                            {
+                                "id": "iphone_11_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "iphone_11_128GB",
+                                "storage": "128GB"
+                            },
+                            {
+                                "id": "iphone_11_256GB",
+                                "storage": "256GB"
+                            }
+                        ]
                     },
                     {
-                        "id": 3,
+                        "id": "phones_apple_models_3",
                         "name": "iPhone 12",
-                        "variants": ["64GB", "128GB", "256GB"]
+                        "variants": [
+                            {
+                                "id": "iphone_12_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "iphone_12_128GB",
+                                "storage": "128GB"
+                            },
+                            {
+                                "id": "iphone_12_256GB",
+                                "storage": "256GB"
+                            }
+                        ]
                     },
                     {
-                        "id": 4,
+                        "id": "phones_apple_models_4",
                         "name": "iPhone 13",
-                        "variants": ["64GB", "128GB", "256GB"]
+                        "variants": [
+                            {
+                                "id": "iphone_13_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "iphone_13_128GB",
+                                "storage": "128GB"
+                            },
+                            {
+                                "id": "iphone_13_256GB",
+                                "storage": "256GB"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "id": 2,
+                "id": "phone_samsung_brand",
                 "name": "Samsung",
                 "models": [
                     {
-                        "id": 1,
+                        "id": "Samsung_Galaxy_S21_phone",
                         "name": "Samsung Galaxy S21",
-                        "variants": ["64GB", "128GB"]
+                        "variants": [
+                            {
+                                "id": "Samsung_Galaxy_S21_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_S21_128GB",
+                                "storage": "128GB"
+                            }
+                        ]
                     },
                     {
-                        "id": 2,
+                        "id": "Samsung_Galaxy_Note20_phone",
                         "name": "Samsung Galaxy Note20",
-                        "variants": ["64GB", "128GB", "256GB"]
+                        "variants": [
+                            {
+                                "id": "Samsung_Galaxy_Note20_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_Note20_128GB",
+                                "storage": "128GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_Note20_256GB",
+                                "storage": "256GB"
+                            }
+                        ]
                     },
                     {
-                        "id": 3,
+                        "id": "Samsung_Galaxy_A51",
                         "name": "Samsung Galaxy A51",
-                        "variants": ["64GB", "128GB", "256GB"]
+                        "variants": [
+                            {
+                                "id": "Samsung_Galaxy_A51_64GB",
+                                "storage": "64GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_A51_128GB",
+                                "storage": "128GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_A51_256GB",
+                                "storage": "256GB"
+                            }
+                        ]
                     }
                 ]
             }
         ]
     },
     {
+        "id": "category_computers",
         "category": "Computers",
         "brands": [
             {
-                "id": 1,
+                "id": "computers_apple_brand",
                 "name": "Apple",
                 "models": [
                     {
-                        "id": 1,
+                        "id": "MacBook_Air",
                         "name": "MacBook Air",
-                        "variants": ["256GB SSD", "512GB SSD"]
+                        "variants": [
+                            {
+                                "id": "MacBook_Air_256GB_SSD",
+                                "storage": "256GB SSD"
+                            },
+                            {
+                                "id": "MacBook_Air_512GB_SSD",
+                                "storage": "512GB SSD"
+                            }
+                        ]
                     },
                     {
-                        "id": 2,
+                        "id": "MacBook_Pro",
                         "name": "MacBook Pro",
-                        "variants": ["256GB SSD", "512GB SSD", "1TB SSD"]
+                        "variants": [
+                            {
+                                "id": "MacBook_Pro_256GB_SSD",
+                                "storage": "256GB SSD"
+                            },
+                            {
+                                "id": "MacBook_Pro_512GB_SSD",
+                                "storage": "512GB SSD"
+                            },
+                            {
+                                "id": "MacBook_Pro_1TB_SSD",
+                                "storage": "1TB SSD"
+                            }
+                        ]
                     }
                 ]
             },
             {
-                "id": 2,
+                "id": "computers_dell_brand",
                 "name": "Dell",
                 "models": [
                     {
-                        "id": 1,
+                        "id": "Dell_XPS_13",
                         "name": "Dell XPS 13",
-                        "variants": ["256GB SSD", "512GB SSD"]
+                        "variants": [
+                            {
+                                "id": "Dell_XPS_13_512GB_SSD",
+                                "storage": "512GB SSD"
+                            },
+                            {
+                                "id": "Dell_XPS_13_1TB_SSD",
+                                "storage": "1TB SSD"
+                            }
+                        ]
                     },
                     {
-                        "id": 2,
+                        "id": "Dell_Inspiron_15",
                         "name": "Dell Inspiron 15",
-                        "variants": ["512GB SSD", "256GB SSD"]
+                        "variants": [
+                            {
+                                "id": "Dell_Inspiron_15_512GB_SSD",
+                                "storage": "512GB SSD"
+                            },
+                            {
+                                "id": "Dell_Inspiron_15_1TB_SSD",
+                                "storage": "1TB SSD"
+                            }
+                        ]
                     }
                 ]
             }

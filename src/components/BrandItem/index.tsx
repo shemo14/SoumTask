@@ -6,6 +6,10 @@ import {FlatList} from 'react-native';
 const BrandItem = ({brand}: any) => {
   return (
     <Collapsible
+      onChecked={(isChecked: boolean) =>
+        console.log('Brand is Checked ...', isChecked)
+      }
+      // isChecked={true}
       header={() => <Text type={'h4'}>{brand.name}</Text>}
       body={() => (
         <FlatList
