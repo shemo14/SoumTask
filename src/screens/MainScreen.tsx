@@ -16,7 +16,9 @@ const MainScreen = () => {
     <View style={{backgroundColor: '#fff', padding: 15}}>
       <FlatList
         data={products}
-        renderItem={({item}: any) => <ProductItem product={item} />}
+        renderItem={({item}: any) => (
+          <ProductItem product={item} />
+        )}
       />
     </View>
   );

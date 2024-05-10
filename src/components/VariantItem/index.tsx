@@ -7,11 +7,10 @@ const VariantItem = ({variant}: any) => {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const checkHandler = async (isChecked: boolean) => {
-    await dispatch(checkProduct({isChecked, id: variant.id}));
+    await dispatch(checkProduct({isChecked, ids: [variant.id]}));
   };
   useEffect(() => {
     setChecked(selectedProducts.indexOf(variant.id) !== -1);
-    console.log('this is a selected products arr ....', selectedProducts);
   }, [selectedProducts]);
   return (
     <Collapsible

@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Category, Brand, Model, Variant} from './interfaces';
+import {Category} from './interfaces';
 import {getAllProducts, checkProduct} from './requests';
 
 export interface ProductsState {
@@ -26,14 +26,18 @@ export const ProductsSlice = createSlice({
     builder.addCase(
       checkProduct.fulfilled,
       (state, action: PayloadAction<any>) => {
-        const {isChecked, id} = action.payload;
-        const index = state.selectedProducts.indexOf(id);
-        if (isChecked) {
-          if (index === -1) {
-            state.selectedProducts.push(action.payload.id);
+        const {isChecked, ids} = action.payload;
+        for (const id of ids) {
+          const index = state.selectedProducts.indexOf(id);
+          if (isChecked) {
+            if (index === -1) {
+              state.selectedProducts.push(id);
+            }
+          } else {
+            if (index !== -1) {
+              state.selectedProducts.splice(index, 1);
+            }
           }
-        } else {
-          state.selectedProducts.splice(index, 1);
         }
       },
     );

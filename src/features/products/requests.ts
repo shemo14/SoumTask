@@ -10,8 +10,8 @@ export const getAllProducts = createAsyncThunk<any, any>(
 
 export const checkProduct = createAsyncThunk<
   any,
-  {isChecked: boolean; id: string},
+  {isChecked: boolean; ids: string[]},
   any
->('products/checkProduct', async data => {
+>('products/checkProduct', data => {
   return data;
 });
