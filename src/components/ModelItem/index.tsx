@@ -5,7 +5,6 @@ import VariantItem from '../VariantItem';
 import {checkProduct} from '../../features/products/requests';
 import {Variant} from '../../features/products/interfaces.ts';
 import {useAppDispatch, useAppSelector} from '../../app/store';
-
 const ModelItem = ({model}: any) => {
   const selectedProducts = useAppSelector(
     state => state.products.selectedProducts,

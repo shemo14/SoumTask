@@ -15,7 +15,7 @@ export interface Brand {
   models: Model[];
 }
 
-export interface Category {
+export interface Product {
   id: string;
   category: string;
   brands: Brand[];

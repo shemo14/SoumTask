@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Text} from '../../common';
 import {ScrollView, View} from 'react-native';
-import {updateSelectedVariants} from '../../features/products/requests.ts';
+import {updateSelectedVariants} from '../../features/products/requests';
 import SelectedVariantItem from '../SelectedVariantItem';
 import {useAppDispatch, useAppSelector} from '../../app/store';
+import styles from './styles.tsx';
 
 const SelectedVariants = ({products}: any) => {
   const selectedProducts = useAppSelector(
@@ -18,34 +19,17 @@ const SelectedVariants = ({products}: any) => {
 
   useEffect(() => {
     dispatch(updateSelectedVariants({products, selectedProducts}));
-  }, [selectedProducts]);
+  }, [dispatch, products, selectedProducts]);
 
   useEffect(() => {
     setSelectedProductsItems(selectedVariants);
   }, [selectedVariants]);
+
   return (
-    <View
-      style={{
-        width: '100%',
-        minHeight: 200,
-        borderTopRightRadius: 15,
-        borderTopLeftRadius: 15,
-        borderWidth: 1,
-        borderColor: '#ddd',
-        backgroundColor: '#fff',
-        padding: 10,
-        flex: 0.2,
-      }}>
+    <View style={styles.container}>
       <Text type={'h2'}>Selected Variants</Text>
       <ScrollView>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-            marginVertical: 5,
-            flexWrap: 'wrap',
-          }}>
+        <View style={styles.variantItem}>
           {selectedProductsItems.map((item, i) => (
             <SelectedVariantItem item={item} key={i} />
           ))}

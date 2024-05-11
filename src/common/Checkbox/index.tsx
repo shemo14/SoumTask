@@ -1,7 +1,6 @@
 import React, {useState, useLayoutEffect} from 'react';
-import {TouchableOpacity, ViewProps} from 'react-native';
+import {TouchableOpacity, ViewProps, Image} from 'react-native';
 import Animated, {ZoomIn, ZoomOut} from 'react-native-reanimated';
-import {Check} from '../../assets/svg';
 import styles from './styles';
 
 interface CheckBoxProps {
@@ -26,7 +25,7 @@ const Checkbox: React.FC<CheckBoxProps & ViewProps> = props => {
       return;
     }
     setValue(checked);
-  }, [checked]);
+  }, [checked, value]);
 
   return (
     <TouchableOpacity
@@ -40,7 +39,10 @@ const Checkbox: React.FC<CheckBoxProps & ViewProps> = props => {
           entering={ZoomIn.duration(150)}
           exiting={ZoomOut.duration(100)}
           style={stylesWithTheme.iconContainer}>
-          <Check width={20} />
+          <Image
+            source={require('../../assets/images/check.png')}
+            style={{width: 20, height: 20}}
+          />
         </Animated.View>
       )}
     </TouchableOpacity>

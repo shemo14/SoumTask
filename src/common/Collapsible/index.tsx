@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {TouchableOpacity, View} from 'react-native';
 import Checkbox from '../Checkbox';
+import styles from './styles.tsx';
 
 const Collapsible = ({header, body, onChecked, isChecked}: any) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -14,36 +15,25 @@ const Collapsible = ({header, body, onChecked, isChecked}: any) => {
   }, [isChecked]);
 
   return (
-    <View
-      style={{
-        padding: 10,
-        backgroundColor: '#ddd',
-        marginBottom: 15,
-        borderRadius: 10,
-      }}>
+    <View style={styles.container}>
       <TouchableOpacity onPress={() => setCollapsed(!collapsed)}>
-        <View
-          style={{
-            height: 40,
-            alignItems: 'center',
-            flexDirection: 'row',
-          }}>
+        <View style={styles.row}>
           <Checkbox
             onChange={() => checkHandler()}
             checked={checked}
-            style={{marginEnd: 10}}
+            style={styles.checkbox}
           />
           {header()}
         </View>
         {!collapsed && body && (
           <View
-            style={{
-              height: 'auto',
-              backgroundColor: '#ddd',
-              borderTopWidth: !collapsed ? 1 : 0,
-              borderTopColor: '#eee',
-              paddingTop: !collapsed ? 10 : 0,
-            }}>
+            style={[
+              styles.body,
+              {
+                borderTopWidth: !collapsed ? 1 : 0,
+                paddingTop: !collapsed ? 10 : 0,
+              },
+            ]}>
             {body()}
           </View>
         )}

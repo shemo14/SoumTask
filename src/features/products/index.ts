@@ -1,9 +1,9 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Category} from './interfaces';
+import {Product} from './interfaces';
 import {getAllProducts, checkProduct, updateSelectedVariants} from './requests';
 
 export interface ProductsState {
-  products: Category[];
+  products: Product[];
   selectedProducts: string[];
   selectedVariants: string[];
 }

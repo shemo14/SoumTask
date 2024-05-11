@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import {Text, TextProps} from 'react-native';
+import {Text as RNText, TextProps} from 'react-native';
 import {fontCreator} from '../../utils/theme/font.ts';
 
 interface TextAdditionalProps {
@@ -24,18 +24,17 @@ interface TextAdditionalProps {
     | 'i2'
     | 'i3'
     | 'i4';
-  numeric?: boolean;
   children: ReactNode;
 }
 
-const Index: React.FC<TextProps & TextAdditionalProps> = props => {
+const Text: React.FC<TextProps & TextAdditionalProps> = props => {
   const {type, children} = props;
 
   return (
-    <Text {...props} style={[fontCreator(type), props.style]}>
+    <RNText {...props} style={[fontCreator(type), props.style]}>
       {children}
-    </Text>
+    </RNText>
   );
 };
 
-export default Index;
+export default Text;

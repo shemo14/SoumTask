@@ -1,13 +1,3 @@
-// variable for the path of fonts in the project directory to load them
-const fontsPath = {
-  Roboto: {
-    Roboto_Light: require('../../assets/fonts/Roboto-Light.ttf'),
-    Roboto_Regular: require('../../assets/fonts/Roboto-Regular.ttf'),
-    Roboto_Bold: require('../../assets/fonts/Roboto-Bold.ttf'),
-    Roboto_Italic: require('../../assets/fonts/Roboto-Italic.ttf'),
-  },
-};
-
 // variable contain all fonts will be used in the project to provide auto complete when selecting fonts
 const fonts = {
   Roboto: {
@@ -128,4 +118,4 @@ const fontCreator = (type?: string) => {
   return {fontSize, fontFamily, lineHeight, paddingTop: 0};
 };
 
-export {fontsPath, fonts, fontCreator, fontSizes};
+export {fonts, fontCreator, fontSizes};

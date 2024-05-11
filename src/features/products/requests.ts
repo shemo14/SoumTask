@@ -1,6 +1,6 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import products from '../../data/products.json';
-import {Category} from './interfaces.ts';
+import {Product} from './interfaces.ts';
 
 export const getAllProducts = createAsyncThunk<any>(
   'products/getAllProducts',
@@ -19,7 +19,7 @@ export const checkProduct = createAsyncThunk<
 
 export const updateSelectedVariants = createAsyncThunk<
   string[],
-  {products: Category[]; selectedProducts: string[]},
+  {products: Product[]; selectedProducts: string[]},
   any
 >('products/updateSelectedVariants', data => {
   const {products: allProducts, selectedProducts} = data;
@@ -49,6 +49,5 @@ export const updateSelectedVariants = createAsyncThunk<
     }
   }
 
-  console.log(selectedVariants);
   return selectedVariants;
 });
