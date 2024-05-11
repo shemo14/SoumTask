@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
 import {FlatList, View} from 'react-native';
 import {ProductItem} from '../components';
-import {useDispatch, useSelector} from 'react-redux';
 import {getAllProducts} from '../features/products/requests';
 import SelectedVariants from '../components/SelectedVariants';
+import {useAppDispatch, useAppSelector} from '../app/store';
 
 const MainScreen = () => {
-  const products = useSelector(state => state.products.products);
-  const dispatch = useDispatch();
+  const products = useAppSelector(state => state.products.products);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getAllProducts());

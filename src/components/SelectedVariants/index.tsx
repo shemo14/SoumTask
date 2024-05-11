@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {Text} from '../../common';
 import {ScrollView, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
 import {updateSelectedVariants} from '../../features/products/requests.ts';
 import SelectedVariantItem from '../SelectedVariantItem';
+import {useAppDispatch, useAppSelector} from '../../app/store';
 
 const SelectedVariants = ({products}: any) => {
-  const selectedProducts = useSelector(
+  const selectedProducts = useAppSelector(
     state => state.products.selectedProducts,
   );
-  const selectedVariants = useSelector(
+  const selectedVariants = useAppSelector(
     state => state.products.selectedVariants,
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [selectedProductsItems, setSelectedProductsItems] =
     useState<string[]>(selectedProducts);
 

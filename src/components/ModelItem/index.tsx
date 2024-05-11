@@ -1,33 +1,38 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {Text, Collapsible} from '../../common';
 import VariantItem from '../VariantItem';
 import {checkProduct} from '../../features/products/requests';
-import {useDispatch, useSelector} from 'react-redux';
 import {Variant} from '../../features/products/interfaces.ts';
+import {useAppDispatch, useAppSelector} from '../../app/store';
 
 const ModelItem = ({model}: any) => {
-  const selectedProducts = useSelector(
+  const selectedProducts = useAppSelector(
     state => state.products.selectedProducts,
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(false);
   const variantsIds = model.variants.map((variant: Variant) => variant.id);
 
   const checkHandler = async (isChecked: boolean) => {
-    await dispatch(checkProduct({isChecked, ids: [...variantsIds, ...[model.id]]}));
+    await dispatch(
+      checkProduct({isChecked, ids: [...variantsIds, ...[model.id]]}),
+    );
   };
 
-  useEffect(() => {
+  const selectModelBasedOnVariants = useCallback(() => {
     setChecked(selectedProducts.indexOf(model.id) !== -1);
-  }, [selectedProducts]);
 
-  useEffect(() => {
     const isAllVariantsSelected = variantsIds.every((variantId: string) =>
       selectedProducts.includes(variantId),
     );
+
     dispatch(checkProduct({isChecked: isAllVariantsSelected, ids: [model.id]}));
-  }, [selectedProducts]);
+  }, [dispatch, model.id, selectedProducts, variantsIds]);
+
+  useEffect(() => {
+    selectModelBasedOnVariants();
+  }, [selectModelBasedOnVariants]);
 
   return (
     <Collapsible

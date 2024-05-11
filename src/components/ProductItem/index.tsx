@@ -1,16 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {FlatList} from 'react-native';
 import {Text, Collapsible} from '../../common';
 import BrandItem from '../BrandItem';
 import {checkProduct} from '../../features/products/requests';
-import {useDispatch, useSelector} from 'react-redux';
 import {Brand, Model, Variant} from '../../features/products/interfaces';
+import {useAppDispatch, useAppSelector} from '../../app/store';
 
 const ProductItem = ({product}: any) => {
-  const selectedProducts = useSelector(
+  const selectedProducts = useAppSelector(
     state => state.products.selectedProducts,
   );
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(false);
   const brandsIds = product.brands.map((brand: Brand) => brand.id);
   const variantsIds = product.brands.map((brand: Brand) =>
@@ -23,17 +23,19 @@ const ProductItem = ({product}: any) => {
     await dispatch(checkProduct({isChecked, ids: variantsIds.flat(2)}));
   };
 
-  useEffect(() => {
+  const selectProductBasedOnBrands = useCallback(() => {
     setChecked(selectedProducts.indexOf(product.id) !== -1);
-  }, [selectedProducts]);
 
-  useEffect(() => {
     const isAllBrandsSelected = brandsIds.every((brandId: string) =>
       selectedProducts.includes(brandId),
     );
 
     dispatch(checkProduct({isChecked: isAllBrandsSelected, ids: [product.id]}));
-  }, [selectedProducts]);
+  }, [brandsIds, dispatch, product.id, selectedProducts]);
+
+  useEffect(() => {
+    selectProductBasedOnBrands();
+  }, [selectProductBasedOnBrands]);
 
   return (
     <Collapsible

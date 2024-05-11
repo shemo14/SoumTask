@@ -2,7 +2,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import products from '../../data/products.json';
 import {Category} from './interfaces.ts';
 
-export const getAllProducts = createAsyncThunk<any, any>(
+export const getAllProducts = createAsyncThunk<any>(
   'products/getAllProducts',
   async () => {
     return products;
