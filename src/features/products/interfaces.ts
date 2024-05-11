@@ -17,6 +17,6 @@ export interface Brand {
 
 export interface Category {
   id: string;
-  name: string;
+  category: string;
   brands: Brand[];
 }

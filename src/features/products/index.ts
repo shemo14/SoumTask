@@ -1,15 +1,17 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {Category} from './interfaces';
-import {getAllProducts, checkProduct} from './requests';
+import {getAllProducts, checkProduct, updateSelectedVariants} from './requests';
 
 export interface ProductsState {
   products: Category[];
   selectedProducts: string[];
+  selectedVariants: string[];
 }
 
 const initialState: ProductsState = {
   products: [],
   selectedProducts: [],
+  selectedVariants: [],
 };
 
 export const ProductsSlice = createSlice({
@@ -39,6 +41,12 @@ export const ProductsSlice = createSlice({
             }
           }
         }
+      },
+    );
+    builder.addCase(
+      updateSelectedVariants.fulfilled,
+      (state, action: PayloadAction<any>) => {
+        state.selectedVariants = action.payload;
       },
     );
   },
