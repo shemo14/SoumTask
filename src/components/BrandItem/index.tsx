@@ -18,7 +18,7 @@ const BrandItem = ({brand}: any) => {
   );
 
   const checkHandler = async (isChecked: boolean) => {
-    const ids = variantsIds.flat();
+    const ids = [...[brand.id], ...modelsIds, ...variantsIds.flat()];
     await dispatch(checkProduct({isChecked, ids}));
   };
 
@@ -29,7 +29,12 @@ const BrandItem = ({brand}: any) => {
       selectedProducts.includes(modelId),
     );
 
-    dispatch(checkProduct({isChecked: isAllModelsSelected, ids: [brand.id]}));
+    dispatch(
+      checkProduct({
+        isChecked: isAllModelsSelected,
+        ids: [brand.id],
+      }),
+    );
   }, [brand.id, dispatch, modelsIds, selectedProducts]);
 
   useEffect(() => {

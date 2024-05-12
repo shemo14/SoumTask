@@ -14,15 +14,15 @@ const ProductItem = ({product}: any) => {
   const [checked, setChecked] = useState(false);
   const brandsIds = product.brands.map((brand: Brand) => brand.id);
   const variantsIds = product.brands.map((brand: Brand) =>
-    brand.models.map((model: Model) =>
+    brand.models.map((model: Model) => [
+      model.id,
       model.variants.map((variant: Variant) => variant.id),
-    ),
+    ]),
   );
 
   const checkHandler = async (isChecked: boolean) => {
-    const ids = variantsIds.flat(2);
+    const ids = [...[product.id], ...brandsIds, ...variantsIds.flat(3)];
     await dispatch(checkProduct({isChecked, ids}));
-    // await dispatch(checkProduct({isChecked, ids: [product.id]}));
   };
 
   const selectProductBasedOnBrands = useCallback(() => {
@@ -32,7 +32,12 @@ const ProductItem = ({product}: any) => {
       selectedProducts.includes(brandId),
     );
 
-    dispatch(checkProduct({isChecked: isAllBrandsSelected, ids: [product.id]}));
+    dispatch(
+      checkProduct({
+        isChecked: isAllBrandsSelected,
+        ids: [product.id],
+      }),
+    );
   }, [brandsIds, dispatch, product.id, selectedProducts]);
 
   useEffect(() => {

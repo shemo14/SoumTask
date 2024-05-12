@@ -10,11 +10,12 @@ const VariantItem = ({variant}: any) => {
   const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(false);
   const checkHandler = async (isChecked: boolean) => {
-    await dispatch(checkProduct({isChecked, ids: [variant.id]}));
+    const ids = [variant.id];
+    await dispatch(checkProduct({isChecked, ids}));
   };
 
   useEffect(() => {
-    setChecked(selectedProducts.indexOf(variant.id) !== -1);
+    setChecked(selectedProducts.includes(variant.id));
   }, [selectedProducts, variant.id]);
 
   return (

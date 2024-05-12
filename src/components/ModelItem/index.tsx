@@ -14,19 +14,23 @@ const ModelItem = ({model}: any) => {
   const variantsIds = model.variants.map((variant: Variant) => variant.id);
 
   const checkHandler = async (isChecked: boolean) => {
-    await dispatch(
-      checkProduct({isChecked, ids: [...variantsIds, ...[model.id]]}),
-    );
+    const ids = [...variantsIds, ...[model.id]];
+    await dispatch(checkProduct({isChecked, ids}));
   };
 
   const selectModelBasedOnVariants = useCallback(() => {
-    setChecked(selectedProducts.indexOf(model.id) !== -1);
+    setChecked(selectedProducts.includes(model.id));
 
     const isAllVariantsSelected = variantsIds.every((variantId: string) =>
       selectedProducts.includes(variantId),
     );
 
-    dispatch(checkProduct({isChecked: isAllVariantsSelected, ids: [model.id]}));
+    dispatch(
+      checkProduct({
+        isChecked: isAllVariantsSelected,
+        ids: [model.id],
+      }),
+    );
   }, [dispatch, model.id, selectedProducts, variantsIds]);
 
   useEffect(() => {
