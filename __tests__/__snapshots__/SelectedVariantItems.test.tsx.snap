@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SelectedVariantItem snapShot correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#999",
+      "margin": 2,
+      "padding": 5,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "Roboto_Regular",
+          "fontSize": 16,
+          "lineHeight": 22,
+          "paddingTop": 0,
+        },
+        {
+          "color": "#fff",
+        },
+      ]
+    }
+    type="p3"
+  >
+    test item
+  </Text>
+</View>
+`;

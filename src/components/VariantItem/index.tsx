@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Text, Collapsible} from '../../common';
 import {checkProduct} from '../../features/products/requests';
-import {useAppDispatch, useAppSelector} from '../../app/store';
+import {useAppDispatch, useAppSelector} from '../../app/reduxHooks.ts';
 
 const VariantItem = ({variant}: any) => {
   const selectedProducts = useAppSelector(

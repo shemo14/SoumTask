@@ -4,7 +4,7 @@ import {Text, Collapsible} from '../../common';
 import VariantItem from '../VariantItem';
 import {checkProduct} from '../../features/products/requests';
 import {Variant} from '../../features/products/interfaces.ts';
-import {useAppDispatch, useAppSelector} from '../../app/store';
+import {useAppDispatch, useAppSelector} from '../../app/reduxHooks.ts';
 const ModelItem = ({model}: any) => {
   const selectedProducts = useAppSelector(
     state => state.products.selectedProducts,

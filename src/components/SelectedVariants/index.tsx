@@ -3,7 +3,7 @@ import {Text} from '../../common';
 import {ScrollView, View} from 'react-native';
 import {updateSelectedVariants} from '../../features/products/requests';
 import SelectedVariantItem from '../SelectedVariantItem';
-import {useAppDispatch, useAppSelector} from '../../app/store';
+import {useAppDispatch, useAppSelector} from '../../app/reduxHooks.ts';
 import styles from './styles.tsx';
 
 const SelectedVariants = ({products}: any) => {
@@ -15,7 +15,7 @@ const SelectedVariants = ({products}: any) => {
   );
   const dispatch = useAppDispatch();
   const [selectedProductsItems, setSelectedProductsItems] =
-    useState<string[]>(selectedProducts);
+    useState<string[]>([]);
 
   useEffect(() => {
     dispatch(updateSelectedVariants({products, selectedProducts}));

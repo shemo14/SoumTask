@@ -4,7 +4,7 @@ import ModelItem from '../ModelItem';
 import {FlatList} from 'react-native';
 import {checkProduct} from '../../features/products/requests';
 import {Model, Variant} from '../../features/products/interfaces.ts';
-import {useAppDispatch, useAppSelector} from '../../app/store';
+import {useAppDispatch, useAppSelector} from '../../app/reduxHooks.ts';
 
 const BrandItem = ({brand}: any) => {
   const selectedProducts = useAppSelector(
