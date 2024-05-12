@@ -18,4 +18,8 @@ export default StyleSheet.create({
     marginVertical: 5,
     flexWrap: 'wrap',
   },
+  noSelectedVariants: {
+    color: 'red',
+    marginTop: 30,
+  },
 });

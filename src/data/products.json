@@ -5,7 +5,7 @@
         "brands": [
             {
                 "id": "phone_apple_brand",
-                "name": "Apple",
+                "name": "Apple Iphone",
                 "models": [
                     {
                         "id": "phones_apple_models_1",
@@ -79,7 +79,7 @@
             },
             {
                 "id": "phone_samsung_brand",
-                "name": "Samsung",
+                "name": "Samsung Phone",
                 "models": [
                     {
                         "id": "Samsung_Galaxy_S21_phone",
@@ -141,7 +141,7 @@
         "brands": [
             {
                 "id": "computers_apple_brand",
-                "name": "Apple",
+                "name": "Apple MacBook",
                 "models": [
                     {
                         "id": "MacBook_Air",
@@ -206,6 +206,80 @@
                             {
                                 "id": "Dell_Inspiron_15_1TB_SSD",
                                 "storage": "1TB SSD"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "category_smartwatches",
+        "category": "Smartwatches",
+        "brands": [
+            {
+                "id": "smartwatches_apple_brand",
+                "name": "Apple Watch",
+                "models": [
+                    {
+                        "id": "Apple_Watch_Series_6",
+                        "name": "Apple Watch Series 6",
+                        "variants": [
+                            {
+                                "id": "Apple_Watch_Series_6_40GB",
+                                "storage": "40GB"
+                            },
+                            {
+                                "id": "Apple_Watch_Series_6_44GB",
+                                "storage": "44GB"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Apple_Watch_SE",
+                        "name": "Apple Watch SE",
+                        "variants": [
+                            {
+                                "id": "Apple_Watch_SE_40GB",
+                                "storage": "40GB"
+                            },
+                            {
+                                "id": "Apple_Watch_SE_44GB",
+                                "storage": "44GB"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "smartwatches_samsung_brand",
+                "name": "Samsung Watch",
+                "models": [
+                    {
+                        "id": "Samsung_Galaxy_Watch_3",
+                        "name": "Samsung Galaxy Watch 3",
+                        "variants": [
+                            {
+                                "id": "Samsung_Galaxy_Watch_3_41GB",
+                                "storage": "41GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_Watch_3_45GB",
+                                "storage": "45GB"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "Samsung_Galaxy_Watch_Active_2",
+                        "name": "Samsung Galaxy Watch Active 2",
+                        "variants": [
+                            {
+                                "id": "Samsung_Galaxy_Watch_Active_2_40GB",
+                                "storage": "40GB"
+                            },
+                            {
+                                "id": "Samsung_Galaxy_Watch_Active_2_44GB",
+                                "storage": "44GB"
                             }
                         ]
                     }

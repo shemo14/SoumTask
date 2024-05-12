@@ -14,8 +14,9 @@ const SelectedVariants = ({products}: any) => {
     state => state.products.selectedVariants,
   );
   const dispatch = useAppDispatch();
-  const [selectedProductsItems, setSelectedProductsItems] =
-    useState<string[]>([]);
+  const [selectedProductsItems, setSelectedProductsItems] = useState<string[]>(
+    [],
+  );
 
   useEffect(() => {
     dispatch(updateSelectedVariants({products, selectedProducts}));
@@ -30,9 +31,15 @@ const SelectedVariants = ({products}: any) => {
       <Text type={'h2'}>Selected Variants</Text>
       <ScrollView>
         <View style={styles.variantItem}>
-          {selectedProductsItems.map((item, i) => (
-            <SelectedVariantItem item={item} key={i} />
-          ))}
+          {selectedProductsItems.length ? (
+            selectedProductsItems.map((item, i) => (
+              <SelectedVariantItem item={item} key={i} />
+            ))
+          ) : (
+            <Text type={'p2'} style={styles.noSelectedVariants}>
+              No Selected Variants...
+            </Text>
+          )}
         </View>
       </ScrollView>
     </View>
