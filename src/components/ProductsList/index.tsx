@@ -12,6 +12,7 @@ const ProductsList = ({products}: ProductListPropsInterface) => {
   return (
     <View style={styles.container}>
       <FlatList
+        testID={'ProductList'}
         data={products}
         renderItem={({item}: any) => <ProductItem product={item} />}
       />

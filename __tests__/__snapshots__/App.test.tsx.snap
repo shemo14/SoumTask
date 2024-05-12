@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders App snapshot correctly 1`] = `
+<RCTSafeAreaView
+  style={
+    {
+      "backgroundColor": "#F3F3F3",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#fff",
+          "flex": 3,
+          "paddingHorizontal": 15,
+          "paddingTop": 15,
+        }
+      }
+    >
+      <RCTScrollView
+        getItem={[Function]}
+        getItemCount={[Function]}
+        keyExtractor={[Function]}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={0.0001}
+        stickyHeaderIndices={[]}
+        testID="ProductList"
+        viewabilityConfigCallbackPairs={[]}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderColor": "#ddd",
+          "borderTopLeftRadius": 15,
+          "borderTopRightRadius": 15,
+          "borderWidth": 1,
+          "flex": 0.2,
+          "minHeight": 200,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "fontFamily": "Roboto_Bold",
+              "fontSize": 22,
+              "lineHeight": 26,
+              "paddingTop": 0,
+            },
+            undefined,
+          ]
+        }
+        type="h2"
+      >
+        Selected Variants
+      </Text>
+      <RCTScrollView>
+        <View>
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+                "justifyContent": "space-around",
+                "marginVertical": 5,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "fontFamily": "Roboto_Regular",
+                    "fontSize": 18,
+                    "lineHeight": 24,
+                    "paddingTop": 0,
+                  },
+                  {
+                    "color": "red",
+                    "marginTop": 30,
+                  },
+                ]
+              }
+              type="p2"
+            >
+              No Selected Variants...
+            </Text>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;

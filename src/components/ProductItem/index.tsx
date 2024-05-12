@@ -8,7 +8,7 @@ import {useAppDispatch, useAppSelector} from '../../app/reduxHooks.ts';
 
 const ProductItem = ({product}: any) => {
   const selectedProducts = useAppSelector(
-    state => state.products.selectedProducts,
+    state => state.products.selectedProducts ?? [],
   );
   const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(false);

@@ -31,7 +31,7 @@ const SelectedVariants = ({products}: any) => {
       <Text type={'h2'}>Selected Variants</Text>
       <ScrollView>
         <View style={styles.variantItem}>
-          {selectedProductsItems.length ? (
+          {selectedProductsItems && selectedProductsItems.length ? (
             selectedProductsItems.map((item, i) => (
               <SelectedVariantItem item={item} key={i} />
             ))

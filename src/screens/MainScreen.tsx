@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import {ProductsList} from '../components';
 import {getAllProducts} from '../features/products/requests';
-import SelectedVariants from '../components/SelectedVariants';
+import {SelectedVariants, ProductsList} from '../components';
 import {useAppDispatch, useAppSelector} from '../app/reduxHooks.ts';
 import styles from './styles.tsx';
 

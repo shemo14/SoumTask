@@ -1,15 +1,16 @@
 import React from 'react';
 import 'react-native';
-import App from '../App.tsx';
+import {ProductsList} from '../src/components';
+import products from '../src/data/products.json';
 import {it, describe, jest, beforeEach, afterEach, expect} from '@jest/globals';
-import renderer from 'react-test-renderer';
 import {useAppDispatch, useAppSelector} from '../src/app/reduxHooks.ts';
 import {testAppSelector} from '../src/app/testAppSelector.ts';
 import {mocked} from 'jest-mock';
+import {render} from '@testing-library/react-native';
 
 jest.mock('../src/app/reduxHooks.ts');
 
-describe('App', () => {
+describe('MainScreen', () => {
   beforeEach(() => {
     mocked(useAppSelector).mockImplementation(testAppSelector);
     // @ts-ignore
@@ -20,13 +21,13 @@ describe('App', () => {
     jest.clearAllMocks();
   });
 
-  it('renders App snapshot correctly', () => {
+  it('should exist FlatList in ProductsList', () => {
     const InitialState = '';
     jest
       .spyOn(React, 'useState')
       .mockImplementationOnce(() => [InitialState, () => null]);
 
-    const snapShot = renderer.create(<App />).toJSON();
-    expect(snapShot).toMatchSnapshot();
+    const productListComponent = render(<ProductsList products={products} />);
+    expect(productListComponent.getAllByTestId('ProductList').length).toBe(1);
   });
 });
