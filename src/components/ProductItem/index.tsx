@@ -20,11 +20,13 @@ const ProductItem = ({product}: any) => {
   );
 
   const checkHandler = async (isChecked: boolean) => {
-    await dispatch(checkProduct({isChecked, ids: variantsIds.flat(2)}));
+    const ids = variantsIds.flat(2);
+    await dispatch(checkProduct({isChecked, ids}));
+    // await dispatch(checkProduct({isChecked, ids: [product.id]}));
   };
 
   const selectProductBasedOnBrands = useCallback(() => {
-    setChecked(selectedProducts.indexOf(product.id) !== -1);
+    setChecked(selectedProducts.includes(product.id));
 
     const isAllBrandsSelected = brandsIds.every((brandId: string) =>
       selectedProducts.includes(brandId),

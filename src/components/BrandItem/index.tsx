@@ -18,7 +18,8 @@ const BrandItem = ({brand}: any) => {
   );
 
   const checkHandler = async (isChecked: boolean) => {
-    await dispatch(checkProduct({isChecked, ids: variantsIds.flat()}));
+    const ids = variantsIds.flat();
+    await dispatch(checkProduct({isChecked, ids}));
   };
 
   const selectBrandBasedOnModels = useCallback(() => {
